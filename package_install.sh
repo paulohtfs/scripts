@@ -14,9 +14,6 @@ sudo apt-get install -y 		\
 	openjdk-7-jre			\
 	openjdk-7-jdk			\
 	xclip				\
-	texlive-publishers		\
-	texlive-lang-portuguese		\
-	texlive-latex-extra		\
-	texlive-fonts-recommended	\
+	texlive-full	\
 	virtualbox			
 
