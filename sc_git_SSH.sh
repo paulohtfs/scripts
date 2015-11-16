@@ -1,7 +1,7 @@
 #!/bin/sh
 
 ## Script to generate SSH for GitHub
-ssh-keygen -t rsa -C "your_email@email.com"
+ssh-keygen -t rsa -C "paulohtfs@gmail.com"
 
 # Add your key to the ssh-agent
 eval "$(ssh-agent -s)"
