@@ -1,4 +1,0 @@
-#!/bin/bash
-
-echo 'This file produce the ssh config for access the SPB envs'
-
