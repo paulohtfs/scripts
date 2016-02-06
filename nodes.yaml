@@ -1,3 +1,3 @@
-host1.mycompany.com:
+athena:
   run_list:
     - recipe[basics]
