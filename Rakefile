@@ -22,19 +22,24 @@ namespace :serve do
 
   desc 'Choose what you want from the menu'
   task :menu do
-    Rake::Task["serve:init_table"]
+    Rake::Task["serve:init_table"].invoke
     puts msgs['table_info'].white
     configs['tools'].each_with_index do |t,i|
       puts "[#{i+1}]".yellow + t.green
     end
 
     puts msgs['table_ask'].white
-    input = STDIN.gets.chomp
+    input = STDIN.gets.chomp # TODO: validates the enter
     puts msgs['table_choices'].white
     configs['tools'].each_with_index do |t,i|
       puts "[#{i+1}]".yellow + t.green if input.split.include?("#{i+1}")
-      
     end
+    
+    confirmation
+    configs['tools'].each_with_index do |t,i|
+      sh "rake apply[#{t}]" if input.split.include?("#{i+1}")
+    end
+    
   end
     
   desc 'Prepare your table'
