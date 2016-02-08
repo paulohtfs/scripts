@@ -2,29 +2,52 @@ require "chake"
 require "colorize"
 require "yaml"
 
+# Defining the main files and dirs
+#   May not have all of them here
 root=Dir.getwd
-CONFIG_FILE='table.yaml'
-MSG_FILE='msg/msg_rake.yml'
+CONFIG_FILE=root+'/table.yml'
+MSG_FILE=root+'/msg/msg_rake.yml'
 COOKBOOK_DIR=root+'/cookbooks'
 
+# Loading the mains YAML files
+#   May not have all of them here
 configs=YAML.load_file(CONFIG_FILE)
 msgs=YAML.load_file(MSG_FILE)
 
-desc 'Create some deps files'
-task :init_table do
-  puts COOKBOOK_DIR
-  Dir.foreach(COOKBOOK_DIR) do |d|
-    puts d
+namespace :serve do
+  desc 'Run all the cookbooks. Full table :))'
+  task :all do
+    Rake::Task["converge"].invoke
   end
-end
 
-desc 'Setting up work env'
-task :serve do
-  puts msgs['setup_info'].white
-  configs['tools'].each do |t|
-    puts "[ ]".yellow + t.green
+  desc 'Choose what you want from the menu'
+  task :menu do
+    Rake::Task["serve:init_table"]
+    puts msgs['table_info'].white
+    configs['tools'].each_with_index do |t,i|
+      puts "[#{i+1}]".yellow + t.green
+    end
+
+    puts msgs['table_ask'].white
+    input = STDIN.gets.chomp
+    puts msgs['table_choices'].white
+    configs['tools'].each_with_index do |t,i|
+      puts "[#{i+1}]".yellow + t.green if input.split.include?("#{i+1}")
+      
+    end
   end
-  puts msgs['table_ask'].white
+    
+  desc 'Prepare your table'
+  task :init_table do
+    puts msgs['init_table_start'].yellow
+    cookbooks=[]
+    Dir.foreach(COOKBOOK_DIR) do |d|
+      cookbooks.push(d) if not /\./.match(d)
+    end
+    configs['tools']=cookbooks
+    write_yml(configs)
+    puts msgs['success_init_table'].green
+  end
 end
 
 def confirmation
@@ -39,5 +62,12 @@ def confirmation
   else
     puts "Invalid argument. Exiting...".yellow
     confirmation
+  end
+end
+
+# Used by the init_table task
+def write_yml(yml)
+  File.open(CONFIG_FILE,'w') do |file|
+    file.write(YAML.dump(yml))
   end
 end
