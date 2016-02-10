@@ -1,4 +1,11 @@
+
 *swp
 *swo
 /tmp
+
+## Real time files
+table.yml
+
+## Vagrant dir and files
+.vagrant
 
