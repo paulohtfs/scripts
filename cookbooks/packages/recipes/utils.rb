@@ -16,3 +16,11 @@ package 'virtualbox-5.0'
 
 # Comunication tools
 package 'irssi'
+
+# Network
+package 'nmap'
+
+# Packing tools
+package 'build-essential'
+package 'devscripts'
+
