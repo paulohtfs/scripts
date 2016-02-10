@@ -7,4 +7,4 @@ package 'zlib1g-dev' # for foodcritic
 
 gem_package 'foodcritic' # lint tool
 gem_package 'chefspec' # unit test
-
+gem_package 'test-kitchen' # test your cookbook
