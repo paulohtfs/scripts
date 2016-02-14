@@ -12,7 +12,7 @@ package 'tree'
 
 # Development tools
 package 'git'
-package 'virtualbox-5.0'
+#package 'virtualbox-5.0'
 
 # Comunication tools
 package 'irssi'
@@ -21,6 +21,6 @@ package 'irssi'
 package 'nmap'
 
 # Packing tools
-package 'build-essential'
-package 'devscripts'
+#package 'build-essential'
+#package 'devscripts'
 
