@@ -17,10 +17,20 @@ package 'git'
 # Comunication tools
 package 'irssi'
 
-# Network
+# Network tools
 package 'nmap'
+
+# Productivity tools
+#geeknotes (from a repositorie) > http://www.geeknote.me/
 
 # Packing tools
 #package 'build-essential'
 #package 'devscripts'
 
+# Python dependecies
+package 'python-pip'
+package 'python-setuptools'
+package 'python-virtualenv'
+
+# Pip packages
+#pip install maybe
