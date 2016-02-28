@@ -1,0 +1,6 @@
+# TODO: Separete this as TASK:TYPE:MSG
+table_info: "This task will use the cookbook to install and config all tools, frameworks and dependencies to be used in you work environment.\nIf your like to install everything, you can just run 'serve:all'.\nHere are the menu:"
+table_ask: "What do you like to put on the table?\n[Enter with something like \"2 1 3\"]"
+table_choices: "\nYour choices are:"
+success_init_table: "Table is ready!"
+init_table_start: "Initing table..."

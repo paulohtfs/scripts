@@ -1,0 +1,14 @@
+
+*swp
+*swo
+/tmp
+
+## Real time files
+table.yml
+
+## Vagrant dir and files
+.vagrant
+
+## Kitchen dir and files
+.kitchen/
+.kitchen.local.yml
