@@ -10,6 +10,9 @@ package 'vim'
 package 'tmux'
 package 'tree'
 
+# Graphic tools
+package 'i3lock'
+
 # Development tools
 package 'git'
 #package 'virtualbox-5.0'
@@ -23,7 +26,7 @@ package 'nmap'
 # Productivity tools
 #geeknotes (from a repositorie) > http://www.geeknote.me/
 
-# Packing tools
+# Packing DEB tools
 #package 'build-essential'
 #package 'devscripts'
 
@@ -34,3 +37,7 @@ package 'python-virtualenv'
 
 # Pip packages
 #pip install maybe
+
+# Utils?????
+package 'xcowsay'
+package 'oneko'
