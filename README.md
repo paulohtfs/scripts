@@ -9,3 +9,8 @@ For use this you need to install the fallowing deps
 - ruby
 - chake
 - rake
+
+<details>
+  <summary>Click to expand</summary>
+  whatever
+</details>
